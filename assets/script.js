@@ -6,10 +6,10 @@ var container = document.getElementById("container");
 
 
 // search button //
-searchBtnEl.addEventListener("click", clickMe);
-function clickMe() {
+searchBtnEl.addEventListener("click", function (event) {
+  event.preventDefault();
   getApi(searchInputEl.value);
-}
+});
 
 // API keys //
 function getApi(city) {
@@ -46,6 +46,7 @@ function getApi(city) {
       displayText.appendChild(currentHumidity);
       displayText.appendChild(currentTemp);
       // displayText.appendChild(currentUvi);
+
       //appending to container on html
       // container.appendChild(icon);
       container.appendChild(cityName);
